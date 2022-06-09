@@ -5,7 +5,7 @@ import { installed, loaded, removePlugin, togglePlugin } from "@cumcord/plugins"
 import { showConfirmationModal } from "@cumcord/ui/modals";
 import { showToast } from "@cumcord/ui/toasts";
 import { copyText, useNest } from "@cumcord/utils";
-import showPluginSettings from "./showPluginSettings";
+import showPluginSettings from "../showPluginSettings";
 
 const [Card, Flex, Header, FormText, Switch, [, Markdown], Tooltip] = batchFind(
   ({ findByProps, findByDisplayName, findByDisplayNameAll }) => {

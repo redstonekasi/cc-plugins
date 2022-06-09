@@ -1,7 +1,8 @@
 import { batchFind, findByProps } from "@cumcord/modules/webpack";
+import { importPlugin, installed } from "@cumcord/plugins";
 import { showToast } from "@cumcord/ui/toasts";
 import { useNest } from "@cumcord/utils";
-import ThemeCard from "./ThemeCard";
+import PluginCard from "../cards/PluginCard";
 
 const [Flex, FormItem, FormDivider, TextInput, Button, SearchBar] = batchFind(
   ({ findByProps, findByDisplayName }) => {
@@ -25,10 +26,10 @@ export default (props) => {
   const [searchFilter, setSearch] = React.useState("");
   const [input, setInput] = React.useState("");
 
-  useNest(cumstain.installed);
+  useNest(installed);
 
   const handleImport = () =>
-    cumstain.importTheme(input).then(
+    importPlugin(input).then(
       () => setInput(""),
       (err) =>
         showToast({
@@ -38,24 +39,24 @@ export default (props) => {
         }),
     );
 
-  const themeIds = Object.keys(cumstain.installed.ghost);
-  const filteredThemes = !searchFilter
-    ? themeIds
-    : themeIds.sort((a, b) => {
-        const themeA = Object.values(cumstain.installed.ghost[a].manifest).join("");
-        const themeB = Object.values(cumstain.installed.ghost[b].manifest).join("");
+  const pluginIds = Object.keys(installed.ghost);
+  const filteredPlugins = !searchFilter
+    ? pluginIds
+    : pluginIds.sort((a, b) => {
+        const pluginA = Object.values(installed.ghost[a].manifest).join("");
+        const pluginB = Object.values(installed.ghost[b].manifest).join("");
 
-        return filterCount(themeB, searchFilter) - filterCount(themeA, searchFilter);
+        return filterCount(pluginB, searchFilter) - filterCount(pluginA, searchFilter);
       });
 
   return (
     <>
-      <FormItem title="Add theme">
+      <FormItem title="Add plugin">
         <Flex basis="auto" grow={1} shrink={1}>
           <Flex.Child basis="auto" grow={1} shrink={1}>
             <TextInput
               className={classes.wrapper}
-              placeholder="https://example.com/theme"
+              placeholder="https://example.com/plugin"
               type="text"
               value={input}
               onChange={setInput}
@@ -66,7 +67,7 @@ export default (props) => {
           </Flex.Child>
           <Flex.Child basis="auto" grow={1} shrink={1}>
             <Button color={Button.Colors.BRAND} size={Button.Sizes.MEDIUM} onClick={handleImport}>
-              Add theme
+              Add plugin
             </Button>
           </Flex.Child>
         </Flex>
@@ -78,12 +79,12 @@ export default (props) => {
         <SearchBar
           query={searchFilter}
           onQueryChange={setSearch}
-          placeholder="Search themes..."
+          placeholder="Search..."
           size={SearchBar.Sizes.MEDIUM}
         />
       </FormItem>
-      {filteredThemes.map((i) => (
-        <ThemeCard themeId={i} {...props} />
+      {filteredPlugins.map((i) => (
+        <PluginCard pluginId={i} {...props} />
       ))}
     </>
   );
