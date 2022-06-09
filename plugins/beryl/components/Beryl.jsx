@@ -1,4 +1,4 @@
-import { batchFind } from "@cumcord/modules/webpack";
+import { batchFind, findByProps } from "@cumcord/modules/webpack";
 import { loaded } from "@cumcord/plugins";
 import { ErrorBoundary } from "@cumcord/ui/components";
 import { useNest } from "@cumcord/utils";
