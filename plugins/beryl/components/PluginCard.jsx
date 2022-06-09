@@ -114,7 +114,7 @@ export default (props) => {
                     (confirm) => {
                       if (!confirm) return;
                       removePlugin(props.pluginId);
-                      idbKeyval.del(`${props.pluginId}_CHAOS_STORE`, idbStore);
+                      idbKeyval.del(`${props.pluginId}_CUMCORD_STORE`);
                     },
                   );
                 }}
