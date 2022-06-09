@@ -1,0 +1,9 @@
+# ci dist folder
+.dist
+# sperm dist folder
+dist
+
+# npm stuff
+node_modules
+.pnpm-debug.log
+package-lock

@@ -1,0 +1,22 @@
+{
+  "private": true,
+  "scripts": {
+    "prepare": "husky install",
+    "format": "prettier -wc ."
+  },
+  "devDependencies": {
+    "cumcord-types": "^1.3.0",
+    "husky": "^8.0.1",
+    "prettier": "^2.6.2"
+  },
+  "packageManager": "pnpm@7.1.9",
+  "pnpm": {
+    "peerDependencyRules": {
+      "ignoreMissing": [
+        "react",
+        "react-dom",
+        "solid-js"
+      ]
+    }
+  }
+}
