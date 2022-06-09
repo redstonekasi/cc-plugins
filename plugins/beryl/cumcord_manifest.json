@@ -1,0 +1,7 @@
+{
+  "name": "Beryl",
+  "description": "Beryl is a Topaz-like interface for Cumcord.",
+  "author": "redstonekasi",
+  "file": "index.js",
+  "license": "BSD-3"
+}

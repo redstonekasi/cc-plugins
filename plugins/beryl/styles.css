@@ -1,0 +1,37 @@
+.beryl-plugin-card {
+  padding: 16px;
+  background-color: var(--background-secondary);
+  margin-bottom: 10px;
+}
+
+.beryl-plugin-card > div:nth-child(1) {
+  margin-bottom: 3px;
+}
+
+.beryl-card-header {
+  display: inline-block;
+}
+
+.beryl-card-author,
+.beryl-card-title {
+  display: inline;
+}
+
+.beryl-card-right {
+  display: flex;
+  align-items: center;
+}
+
+.beryl-card-right > div {
+  margin-left: 3px;
+}
+
+.beryl-card-right > svg {
+  fill: var(--interactive-normal);
+  cursor: pointer;
+  width: 24px;
+}
+
+.beryl-subpage-label {
+  color: var(--header-secondary);
+}
