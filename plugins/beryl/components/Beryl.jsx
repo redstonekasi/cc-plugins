@@ -1,9 +1,9 @@
+import { ErrorBoundary } from "@cumcord/ui/components";
 import { batchFind, findByProps } from "@cumcord/modules/webpack";
 import { loaded } from "@cumcord/plugins";
 import { useNest } from "@cumcord/utils";
 import TabPlugins from "./tabs/TabPlugins";
 import TabSettings from "./tabs/TabSettings";
-import ErrorBoundary from "./ErrorBoundary";
 
 const [Title, HeaderBarContainer, TabBar, Breadcrumbs, PanelButton, Retry] = batchFind(
   ({ findByDisplayName }) => {
