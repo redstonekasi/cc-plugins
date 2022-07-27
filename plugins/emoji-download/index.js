@@ -52,7 +52,7 @@ const removeCommand = addCommand({
       content: "Click here to save",
       onClick: () => {
         archive.generateAsync({ type: "uint8array" }).then((u8) => {
-          if (DiscordNative) DiscordNative.fileManager.saveWithDialog(u8, `${guild}.zip`);
+          if (window.DiscordNative) DiscordNative.fileManager.saveWithDialog(u8, `${guild}.zip`);
           else {
             const a = document.createElement("a");
             a.download = `${guild}.zip`;
