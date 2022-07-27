@@ -56,7 +56,7 @@ const removeCommand = addCommand({
           else {
             const a = document.createElement("a");
             a.download = `${guild}.zip`;
-            a.href = URL.createObjectURL(new Blob(u8));
+            a.href = URL.createObjectURL(new Blob(u8), { type: "application/octet-stream" });
             a.click();
 
             setTimout(() => URL.revokeObjectURL(a.href), 40000);
