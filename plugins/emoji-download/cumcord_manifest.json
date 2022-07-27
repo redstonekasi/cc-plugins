@@ -1,0 +1,7 @@
+{
+  "name": "Emoji Download",
+  "description": "Download every emoji in a guild",
+  "author": "redstonekasi",
+  "file": "index.js",
+  "license": "BSD-3"
+}
