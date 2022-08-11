@@ -22,8 +22,7 @@ export default () =>
 
         if (!handler?.children && image) {
           res.props.onClick = () => open(image);
+          res.props.className = [res.props.className, "kasi-pl-clickable"].join(" ");
         }
-
-        res.props.className = [res.props.className, "kasi-pl-clickable"].join(" ");
       }),
   );
