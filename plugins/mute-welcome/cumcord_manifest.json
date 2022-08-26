@@ -1,0 +1,7 @@
+{
+  "name": "Mute Welcome",
+  "description": "Auto-mute welcome channels when joining a server",
+  "author": "redstonekasi",
+  "file": "index.js",
+  "license": "BSD-3"
+}
